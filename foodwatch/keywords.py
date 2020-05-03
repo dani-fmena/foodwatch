@@ -1,5 +1,4 @@
 wordpool = [
-    "tomate",
     "leche",
     "malta",
     "queso",
@@ -12,5 +11,8 @@ wordpool = [
     "picadillo",
     "higado",
     "hígado",
-    "mollejas"
+    "mollejas",
+    "carne",
+    "salchichas",
+    "golden maple"
 ]

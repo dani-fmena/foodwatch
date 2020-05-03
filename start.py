@@ -14,4 +14,6 @@ process.crawl(Carlos3Spider)
 process.crawl(CaminosSpider)
 process.crawl(QuintaSpider)
 
+print('foodwatch [CRAWLING ...]')
 process.start()     # the script will block here until all crawling jobs are finished
+print('foodwatch [DONE]')
