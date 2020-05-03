@@ -1,7 +1,7 @@
 A FOOD WATCHER SCRIPT 🍗
 ===
 
-This is a *quickly* made food watcher [scrapy](https://scrapy.org/) script build with **scrapy** framework. Basically use the search box from:
+This is a *quickly* made food watcher script build with [scrapy](https://scrapy.org/) framework. Basically use the search box from:
 + [Tuenvio.cu Carlos Tercero](https://www.tuenvio.com/carlos3) 
 + [Tuenvio.cu 4 Caminos](https://www.tuenvio.com/4caminos) 
 + [5ta y 42](https://https://5tay42.xetid.cu/) 
