@@ -9,7 +9,7 @@ This is a *quickly* made food watcher script build with [scrapy](https://scrapy.
 for looking up a list of defined keywords. The data is exported in a **data.jl** file.  
 
 ---
-##### Dependecies
+#### Dependecies
 
 + scrapy
 + win10toast
@@ -18,7 +18,7 @@ For installing the dependencies just run
 ```ptyhon
 pip install scrapy win10toast
 ```
-##### Runing the script
+#### Runing the script
 
 Once you have installed the dependencies, just run:
 
