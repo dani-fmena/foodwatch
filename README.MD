@@ -1,4 +1,4 @@
-A FOOD WATCHER SCRIPT 🍗
+Food (any product) Watcher Script 🍗
 ===
 
 This is a *quickly* made food watcher script build with [scrapy](https://scrapy.org/) framework. Basically use the search box from:
