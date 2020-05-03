@@ -1,3 +1,6 @@
 /idea/
-idea/
+/idea
+idea/*.iml
+idea/*.xhtml
+idea/*.xml
 /workspace.xml
