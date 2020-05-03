@@ -25,7 +25,7 @@ class QuintaSpider(scrapy.Spider):
 
         for product in response.css("ul#listado-prod div.product-container div.right-block"):
             yield {
-                'text': product.css("p.product-desc::text").get(),
+                'product': product.css("p.product-desc::text").get(),
                 'price': product.css("div.content_price span.price::text").get(),
             }
 

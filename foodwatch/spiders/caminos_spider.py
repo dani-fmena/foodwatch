@@ -25,7 +25,7 @@ class CaminosSpider(scrapy.Spider):
 
         for product in response.css("div.thumbSetting"):
             yield {
-                'text': product.css("div.thumbTitle>a::text").get(),
+                'product': product.css("div.thumbTitle>a::text").get(),
                 'price': product.xpath("div[2]/span/text()").get(),
             }
 
