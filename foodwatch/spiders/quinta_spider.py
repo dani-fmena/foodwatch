@@ -4,16 +4,15 @@ from ..helpers import Helpers
 from foodwatch.keywords import wordpool
 
 
-class CaminosSpider(scrapy.Spider):
-    name = "caminos"
+class QuintaSpider(scrapy.Spider):
+    name = "quinta"
     timeflag = False
-
 
     def start_requests(self):
         urls = []
 
         for keyword in wordpool:
-            urls.append("https://www.tuenvio.cu/4caminos/Search.aspx?keywords=%22" + keyword + "%22")
+            urls.append("https://5tay42.xetid.cu/module/categorysearch/catesearch?search_query="+keyword)
 
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
@@ -21,9 +20,9 @@ class CaminosSpider(scrapy.Spider):
     def parse(self, response):
         count = 0
 
-        for product in response.css("div.thumbSetting"):
-            pname = product.css("div.thumbTitle>a::text").get()
-            pprice = product.xpath("div[2]/span/text()").get()
+        for product in response.css("ul#listado-prod div.product-container div.right-block"):
+            pname = product.css("p.product-desc::text").get()
+            pprice = product.css("div.content_price span.price::text").get()
             phash = Helpers.mkhash(pname, pprice)
 
             if Helpers.ispresent(phash) is False:
@@ -38,4 +37,4 @@ class CaminosSpider(scrapy.Spider):
                 count += 1
                 yield {'product': pname, 'price': pprice, 'chk': phash}
 
-        if count > 0: Helpers.firetoast(0, count)
+        if count > 0: Helpers.firetoast(2, count)

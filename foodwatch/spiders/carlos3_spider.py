@@ -1,13 +1,12 @@
 import scrapy
 from datetime import datetime
-from win10toast import ToastNotifier
+from ..helpers import Helpers
 from foodwatch.keywords import wordpool
 
 
 class Carlos3Spider(scrapy.Spider):
     name = "carlos3"
     timeflag = False
-    toaster = ToastNotifier()
 
     def start_requests(self):
         urls = []
@@ -19,20 +18,23 @@ class Carlos3Spider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        if self.timeflag is False:
-            yield {'--- DATE ---': datetime.now().strftime("%d/%m/%Y %H:%M:%S"), "place": self.name}
-            self.timeflag = True
+        count = 0
 
         for product in response.css("div.thumbSetting"):
-            yield {
-                'product': product.css("div.thumbTitle>a::text").get(),
-                'price': product.xpath("div[2]/span/text()").get(),
-            }
+            pname = product.css("div.thumbTitle>a::text").get()
+            pprice = product.xpath("div[2]/span/text()").get()
+            phash = Helpers.mkhash(pname, pprice)
 
-        pcount = len(response.css("div.thumbSetting"))
-        if pcount > 0:
-            self.toaster.show_toast(
-                "Productos encontrados en Carlos Tercero",
-                "Encontrados %s productos" % str(pcount),
-                duration=50
-            )
+            if Helpers.ispresent(phash) is False:
+
+                if self.timeflag is False:
+                    yield {
+                        '--------- DATE ---------': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                        "place": self.name.upper()
+                    }
+                    self.timeflag = True
+
+                count += 1
+                yield {'product': pname, 'price': pprice, 'chk': phash}
+
+        if count > 0: Helpers.firetoast(1, count)
