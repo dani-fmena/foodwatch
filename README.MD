@@ -6,7 +6,7 @@ This is a *quickly* made, product watcher script build with [scrapy](https://scr
 + [Tuenvio.cu 4 Caminos](https://www.tuenvio.com/4caminos) 
 + [5ta y 42](https://https://5tay42.xetid.cu/) 
 
-for looking up products matching with a defined keywords list. The data is exported in a **data.jl** file.  
+for looking up products matching with a defined keywords list. The screapped data is exported to a file (**data.jl**).  
 
 ---
 #### Dependecies
