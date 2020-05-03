@@ -28,7 +28,7 @@ python start.py
 
 ❗ Feel free to mod and contribute for improvement if you want. 
 
-*It's recommendable to run the script for conjob or windows task manager for auto running.**
+*It's recommendable to run the script for conjob or windows task manager for auto running.*
 
 
 
