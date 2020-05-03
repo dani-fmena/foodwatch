@@ -26,7 +26,7 @@ Once you have installed the dependencies, just run:
 python start.py
 ```
 
-❗ Feel free to mod and contribute for improvement if you want. 
+❗ Feel free to mod, comment, share, distribute and contribute for improvement if you want. 
 
 *It's recommendable to run the script from cronjob or windows task manager for auto running.*
 
