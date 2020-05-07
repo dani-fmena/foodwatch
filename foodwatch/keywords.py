@@ -13,6 +13,8 @@ wordpool = [
     "hígado",
     "mollejas",
     "carne",
-    "salchichas",
-    "golden maple"
+    # "salchichas",
+    "golden maple",
+    "yogourt",
+    "yogurt"
 ]

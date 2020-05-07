@@ -96,4 +96,4 @@ FEEDS = {
         'encoding': 'utf-8',
     }
 }
-LOG_ENABLED = False
+LOG_ENABLED = True
