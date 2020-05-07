@@ -22,8 +22,10 @@ class Helpers:
         """
         Create a deterministic hash from product name and price
         """
-        strenc = (pname+pprice).encode()
-        return str(zlib.adler32(strenc))
+        if pprice != None and pname != None:
+            strenc = (pname+pprice).encode()
+            return str(zlib.adler32(strenc))
+        else: return ""
 
     @staticmethod
     def ispresent(phash: str) -> bool:

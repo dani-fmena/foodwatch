@@ -23,7 +23,11 @@ class QuintaaltSpider(scrapy.Spider):
         for product in response.css("ul#listado-prod div.product-container"):
             pname = product.css("div.product-image-container a.product_img_link").xpath('@title').get()
             pprice = product.css("div.right-block div.content_price span.price::text").get()
+
+            if pname is None or pprice is None: continue
+
             phash = Helpers.mkhash(pname, pprice)
+
 
             if Helpers.ispresent(phash) is False:
 

@@ -23,7 +23,11 @@ class QuintaSpider(scrapy.Spider):
         for product in response.css("ul#listado-prod div.product-container div.right-block"):
             pname = product.css("p.product-desc::text").get()
             pprice = product.css("div.content_price span.price::text").get()
+
+            if pname is None or pprice is None: continue
+
             phash = Helpers.mkhash(pname, pprice)
+
 
             if Helpers.ispresent(phash) is False:
 

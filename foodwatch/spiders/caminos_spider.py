@@ -24,6 +24,9 @@ class CaminosSpider(scrapy.Spider):
         for product in response.css("div.thumbSetting"):
             pname = product.css("div.thumbTitle>a::text").get()
             pprice = product.xpath("div[2]/span/text()").get()
+
+            if pname is None or pprice is None: continue
+
             phash = Helpers.mkhash(pname, pprice)
 
             if Helpers.ispresent(phash) is False:
